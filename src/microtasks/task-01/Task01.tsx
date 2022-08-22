@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 
 type PropsType = {};
 
-export const Task02: FC<PropsType> = (props) => {
+export const Task01: FC<PropsType> = (props) => {
   const topCars = [
     {manufacturer: 'BMW', model: 'm5cs'},
     {manufacturer: 'Mercedes', model: 'e63s'},
@@ -11,6 +11,7 @@ export const Task02: FC<PropsType> = (props) => {
 
   return (
     <table>
+      <tbody>
       {
         topCars.map((c, index) => {
           return (
@@ -19,9 +20,10 @@ export const Task02: FC<PropsType> = (props) => {
               <td>{c.manufacturer} </td>
               <td>{c.model}</td>
             </tr>
-           )
+          )
         })
       }
+      </tbody>
     </table>
   )
 }
