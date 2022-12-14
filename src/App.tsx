@@ -27,7 +27,7 @@ function App() {
 
   let [todolists, setTodolists] = useState<Array<todolistsType>>([
     {id: todolistID1, title: 'What to learn', filter: 'all'},
-    {id: todolistID2, title: 'What to buy', filter: 'all'},
+    {id: todolistID2, title: 'What to buy', filter: 'completed'},
   ])
 
   let [tasks, setTasks] = useState({
@@ -87,7 +87,6 @@ function App() {
     <div className="App">
       {
         todolists.map(tl => {
-          console.log(tasks[tl.id])
           return (
             <Todolist
               key={tl.id}
@@ -98,9 +97,8 @@ function App() {
               changeFilter={changeFilter}
               addTask={addTask}
               changeTaskStatus={changeStatus}
-              // filter={filter}
+              filter={tl.filter}
             />
-
           )
         })
       }
