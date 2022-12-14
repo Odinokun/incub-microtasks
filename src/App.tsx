@@ -47,7 +47,6 @@ function App() {
     ]
   });
 
-
   function removeTask(id: string) {
     // let filteredTasks = tasks.filter(t => t.id != id);
     // setTasks(filteredTasks);
@@ -68,8 +67,8 @@ function App() {
     // setTasks([...tasks]);
   }
 
-  function changeFilter(value: FilterValuesType) {
-    // setFilter(value);
+  function changeFilter(value: FilterValuesType, todolistId: string) {
+    setTodolists(todolists.map(tl => tl.id === todolistId ? {...tl, filter: value} : tl))
   }
 
 
